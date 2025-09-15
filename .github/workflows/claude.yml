@@ -29,14 +29,7 @@ jobs:
         uses: actions/checkout@v5.0.0
         with:
           fetch-depth: 1
-
-      - name: Retrieve Anthropic API Key from Vault
-        id: get-secrets
-        uses: grafana/shared-workflows/actions/get-vault-secrets@28361cdb22223e5f1e34358c86c20908e7248760
-        with:
-          repo_secrets: |
-            ANTHROPIC_API_KEY=anthropic:api-key
-
+          
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@8b2bd6d04f7b6ac4ba5523a3a573f7843ab4b4ba  # beta
